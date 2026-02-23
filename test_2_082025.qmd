@@ -1,5 +1,5 @@
 ---
-title: "Population Understanding and Foundations of Probability"
+title: "Population Inference and Foundations of Probability"
 author: "<br><br><span style='font-size:25px;'><strong>Lesley Chapman Hannah, Ph.D., M.S.</strong></span><br>College of Graduate Studies<br>Northeast Ohio Medical University"
 format:
   revealjs:
