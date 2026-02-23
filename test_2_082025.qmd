@@ -1,0 +1,470 @@
+---
+title: "Population Understanding and Foundations of Probability"
+author: "<br><br><span style='font-size:25px;'><strong>Lesley Chapman Hannah, Ph.D., M.S.</strong></span><br>College of Graduate Studies<br>Northeast Ohio Medical University"
+format:
+  revealjs:
+    theme: simple
+    slide-number: true
+    chalkboard: true
+    transition: fade
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+
+### Introduction
+<div style="font-size:0.7em">
+In biomedical and clinical science, knowledge and insights emerge from laboratory experiments, clinical trials, population studies, or genomic databases, the conclusions we draw are anchored in observed data
+
+- the data often require interpretation:
+  - determining whether a treatment effect is meaningful
+  - whether a biomarker signal is reproducible
+  - whether a genomic variant is rare or common
+  - whether an observed association reflects biology rather than study design
+ 
+- statistics provides the framework for this interpretation and allows researchers to understand, evaluate, and generate biomedical evidence in a systematic way
+</div>
+
+---
+
+### Statistics and Scientific Literature
+<div style="font-size:0.7em">
+In scientific literature [i.e.: Science, Cell, Nature] readers often encounter metrics such as: 
+  
+    effect sizes, risk ratios, regression coefficients, confidence intervals, survival curves
+
+- metrics that express strength of evidence between associations and uncertainty
+
+- statistics in biomedicine provide the tools for distinguishing meaningful biological signals from background variation
+
+</div>
+---
+
+### Statistics and Clincial Science
+<div style="font-size:0.7em">
+
+- study design decisions shape the type and strength of evidence produced
+- Example study design decisions:
+  - cohort selection
+  - measurement strategies
+  - analytical approaches
+- statistical frameworks guide these decisions by clarifying how data can support specific scientific questions and how uncertainty will be quantified
+- designing a clinical trial involves anticipating variability and determining sample size requirements
+- designing a biomarker study involves assessing measurement reliability and effect magnitude
+- statistical approaches help define these choices
+
+</div>
+---
+
+### Statistics and Biomedical Science
+
+<div style="font-size:0.7em">
+
+Biomedical research often begins with a question that invovles determining:
+
+> What does our select dataset tell us about a broader population?
+
+Scientific task generates numbers and our goal is to interpret those numbers as evidence
+
+Approach for analysis would involve describing:
+
+- the scientific target of interest  
+- the observed data used as evidence  
+- the quantity the analysis aims to estimate  
+- the uncertainty that accompanies any conclusion  
+
+Next, we introduce the core terms that help define statistical reasoning in biomedical science
+
+</div>
+
+---
+
+### Core Statistical Definitions
+<div style="font-size:0.7em">
+- define terms within the basic framework for statistical inference, regression modeling, and biomedical decision-making
+
+- terms include:
+
+  - population
+  - sample
+  - parameter
+  - statistic
+
+</div>
+---
+
+### Core Statistical Definitions
+<div style="font-size:0.7em">
+- define terms within the basic framework for statistical inference, regression modeling, and biomedical decision-making
+
+- **population**: complete set of biological units, measurements, or possible outcomes relevant to a scientific question
+
+- population is often entirely unobservable
+
+**Examples**
+
+- all patients with pancreatic cancer in the United States
+- all circulating tumor cells in a single patient’s bloodstream
+- all potential gene expression profiles under a defined biological condition
+
+- statistical test exist because we cannot measure every unit in the population; instead, we draw inferences from samples
+
+</div>
+---
+
+### Sample: Observable Subset of the Population
+<div style="font-size:0.7em">
+
+**Sample**
+
+- subset of the population that we actually observe and measure
+- sample: **data available for analysis**
+- statistical conclusions originate from this subset
+
+Statistical inference answers:
+
+> What does this sample tell us about the population?
+
+Examples:
+
+- 200 patients enrolled in a clinical trial
+- 50 tumor biopsies selected for sequencing
+- 10,000 cells measured in single‑cell RNA‑seq
+
+</div>
+---
+
+### Random Sampling and Statistical Inference
+
+<div style="font-size:0.7em">
+
+- random sampling: a data collection process in which each unit in the target population has a known, non-zero probability of selection determined by chance rather than investigator choice
+
+Random sampling helps ensure:
+
+  - absence of systematic selection bias
+  - representation of population heterogeneity
+  - quantifiable sampling uncertainty
+  - validity of probability-based inference
+
+Consequence of non-random sampling
+
+  - estimates may be biased
+  - variability cannot be quantified correctly
+  - population inference may be invalid
+
+</div>
+---
+
+### Sampling Variability and Behavior of Sample Statistics
+
+<div style="font-size:0.7em">
+
+**Sampling variability**: 
+- inherent variation in a statistic across repeated random samples from the same population
+- observable consequence of random sampling and represents the distribution of possible estimates that could have been obtained under repeated data collection
+
+- sampling variability is linked to:
+
+  - confidence intervals $\rightarrow$ quantifying estimation uncertainty
+  - hypothesis testing $\rightarrow$ assessing compatibility with models
+  - regression inference $\rightarrow$ evaluating parameter uncertainty
+</div>
+---
+
+### Statistics and Variation Across Samples
+
+<div style="font-size:0.7em">
+
+- **sampling variability**: variation in a statistic across repeated samples drawn from the same population
+
+- value reflects the randomness inherent in sampling rather than true differences in the underlying population
+
+- **scenario**:  repeat a study and collect a new sample
+
+- **outcome**: obtain a different statistic
+
+Example:
+
+Study 1: response rate = 42%  
+Study 2: response rate = 47%  
+
+</div>
+---
+
+
+### Statistical Inference Requires Sampling
+
+<div style="font-size:0.7em">
+Measuring the entire population is typically impossible due to:
+- Cost
+- Time
+- Ethical constraints
+- Biological feasibility
+
+Examples:
+
+- Cannot sequence every cancer cell in a tumor
+- Cannot enroll every patient in a clinical trial
+- Cannot observe every biological realization
+
+- sampling makes statistical inference feasible
+</div>
+---
+
+### Parameter: Linking Population to Sample
+
+<div style="font-size:0.7em">
+
+**Parameter**: fixed but unknown numerical characteristic of the population
+
+**Examples**:
+
+- True cancer prevalence rate
+- True mean gene expression level
+- True treatment response probability
+
+**Nomenclature examples**:
+
+$$
+\mu, \; \sigma, \; p, \; \beta
+$$
+</div>
+---
+
+
+
+### Statistic: Observable Estimate of the Parameter
+
+<div style="font-size:0.7em">
+
+- **statistic**: computed from the sample and used to estimate the parameter
+
+- *statistics*: random variables because they depend on the sampled data
+
+**Examples**:
+
+- Sample mean: $\bar{x}$ estimates population mean $\mu$
+- Sample proportion: $\hat{p}$ estimates population proportion $p$
+- Regression coefficients estimate population relationships
+
+</div>
+---
+
+### Definition: Statistic
+<div style="font-size:0.7em">
+- **statistic**: numerical summary computed from a sample
+
+- a statistic describes what we observed in the data
+
+Examples:
+
+- Sample mean age of patients: 63.4 years  
+- Sample response rate: 42%  
+- Observed allele frequency in gnomAD: 0.003  
+
+- Note: these numbers summarize the sample — not the entire population
+</div>
+---
+
+### Statistic vs Parameter
+<div style="font-size:0.7em">
+
+**parameter**: 
+
+- fixed numerical characteristic of the entire population
+- value does not change 
+- value typically cannot observed directly
+
+Example: true mean gene expression under a condition $\mu$
+
+**statistic**:
+
+- numerical summary computed from sample data
+- value can vary from sample to sample
+- serves as an estimate of the corresponding parameter
+
+Example: sample mean gene expression under a condition $\bar{\mu}$
+
+Note:
+
+- never directly observe parameters
+- observe statistics $\rightarrow$ use probability theory to understand how those statistics relate to the underlying parameters
+</div>
+---
+
+
+
+### Example: Biomedical Example: Sampling Variability in Population Genomics
+
+<div style="font-size:0.7em">
+
+**Background: What is allele frequency?**
+
+- **allele frequency**: proportion of all gene copies at a specific genomic locus within a defined population that carry a particular allele
+- **allele frequency**: reflects how common that genetic variant is in that population
+
+Allele frequency is therefore calculated as:
+
+
+$$
+\text{Allele frequency} =
+\frac{\text{Number of occurrences of a given allele}}
+{\text{Total number of alleles at that locus in the population}}
+$$
+
+</div>
+
+---
+
+### Example: Biomedical Example: Sampling Variability in Population Genomics
+
+<div style="font-size:0.7em">
+
+
+
+**Population parameter**
+
+- true allele frequency of a pathogenic variant among all humans
+- represents a biological property of the population
+- fixed but unknown because sequencing every human is infeasible
+
+
+**Statistic**
+
+- observed allele frequency calculated from a sample dataset [i.e.:gnomAD ]
+- population databases [i.e.: gnomAD] are large but finite samples
+- serves as an estimate of the population parameter
+- value depends on which individuals were included in the sample
+
+</div>
+
+---
+
+### Example: Biomedical Example: Sampling Variability in Population Genomics
+
+<div style="font-size:0.7em">
+
+**Background**
+
+- different sequencing cohorts produce slightly different estimates of allele frequency
+- population databases therefore provide statistical estimates of population genetic parameters rather than exact values
+
+**Central question**:
+Why do allele frequency estimates vary across sequencing datasets?
+
+**Approach**:
+Simulate repeated sequencing studies from a population with a fixed allele frequency
+
+
+</div>
+
+---
+
+### Example: Biomedical Example: Sampling Variability in Population Genomics
+
+<div style="font-size:0.3em">
+
+**Conclusions**
+
+- observed allele frequencies fluctuate across samples, illustrating sampling variability
+- figure shows: sampling variability of allele frequency estimates across repeated sequencing studies
+- histogram shows : repeated sequencing studies yield slightly different allele frequency estimates that cluster around the true population frequency $\rightarrow$ sampling variability
+- red line [population parameter]: actual underlying allele frequency
+- even when the true allele frequency is fixed, different samples produce slightly different estimates
+
+**Reasons for differences**:
+
+- each sequencing cohort contains a different set of chromosomes
+- random sampling causes small differences in observed variant counts
+
+```{r, echo = FALSE}
+# True population parameter (unknown in practice)
+true_freq <- 0.01   # 1% pathogenic variant frequency
+
+# Sample size similar to a population database subset
+n <- 10000
+
+# Repeat sampling to illustrate sampling variability
+set.seed(123)
+estimates <- replicate(50, mean(rbinom(n, size = 1, prob = true_freq)))
+
+# Visualize sampling variability
+plot <- hist(estimates,
+     main = "Sampling variability of variant frequency estimates",
+     xlab = "Estimated allele frequency",
+     breaks = 15)
+
+# Add true population parameter for reference
+abline(v = true_freq, col = "red", lwd = 2)
+```
+
+
+```{r}
+plot
+```
+
+</div>
+
+---
+
+### Conceptual Model of Statistical Inference
+
+<div style="font-size:0.7em">
+- statistical inference is a process that uses observed data to learn about unknown features of a population
+
+- translates sample-derived summaries into probabilistic statements about population parameters while accounting for sampling variability
+
+Workflow:
+
+Population (unknown parameter)
+$\rightarrow$
+Random sampling
+$\rightarrow$
+Observed sample
+$\rightarrow$
+Compute statistic
+$\rightarrow$
+Estimate population parameter
+$\rightarrow$
+Quantify uncertainty
+
+</div>
+---
+
+### Concept Review
+
+<div style="font-size:0.7em">
+
+- **population**: 
+  - population contains the biological or clinical quantity of interest — such as a response probability, allele frequency, or survival rate
+  - quantity is a parameter $\rightarrow$ fixed but unknown
+
+- **random sampling**: 
+  - subset of units [patients, genomes, cells] selected from the population
+  - sampling introduces randomness $\rightarrow$ only some population members are observed
+  
+- **observed sample**: collected dataset represents one realization from many possible samples that could have been obtained
+
+</div>
+---
+
+### Concept Review
+
+<div style="font-size:0.7em">
+
+- **compute statistic**:statistic [i.e.: proportion, regression coefficient, hazard ratio] summarizes information in the sample
+
+- **estimate population parameter**: 
+  - statistic serves as an estimate of the population parameter 
+  - evidence-based approximation of the underlying biological quantity
+  
+- **quantify uncertainty**: 
+  - statistic depends on the sample, it is subject to sampling variability
+  - statistical inference therefore quantifies uncertainty using tools such as standard errors, confidence intervals, likelihood, or posterior distributions
+</div>
+---
+
+
